@@ -1,0 +1,17 @@
+﻿{
+  "name": "space_adventure_lib",
+  "version": "0.0.1",
+  "displayName": "Space Adventure Lib",
+  "description": "Useful utilities for Unity projects",
+  "unity": "2022.1",
+  "dependences": {},
+  "keywords": [
+    "space_adventure_lib"
+  ],
+  "author": {
+    "name": "Arseny Avdeev",
+    "email": "av6eev@gmail.com",
+    "url": ""
+  },
+  "hideInEditor": false
+}

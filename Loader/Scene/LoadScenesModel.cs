@@ -11,11 +11,11 @@ namespace Loader.Scene
             _wrapper = wrapper;
         }
         
-        public ILoadSceneModel Load(IGameModel gameModel, SceneSpecification specification)
+        public ILoadSceneModel Load(SceneSpecification specification)
         {
             var model = new LoadSceneModel(specification);
             
-            _wrapper.Load(gameModel, model);
+            _wrapper.Load(model);
             
             return model;
         }

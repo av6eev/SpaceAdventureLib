@@ -2,7 +2,7 @@
 {
     public interface ILoadSceneWrapper
     {
-        void Load(IGameModel gameModel, LoadSceneModel model);
+        void Load(LoadSceneModel model);
         void Unload(ILoadSceneModel loadElement);
     }
 }

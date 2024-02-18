@@ -5,6 +5,7 @@ namespace Updater
     public class UpdatersList : IUpdatersList
     {
         private readonly List<IUpdater> _updaters = new();
+        private readonly List<IUpdater> _toAdd = new();
         private readonly List<IUpdater> _toRemove = new();
         
         public void Update(float deltaTime)
@@ -16,6 +17,13 @@ namespace Updater
             
             _toRemove.Clear();
             
+            foreach (var updater in _toAdd)
+            {
+                _updaters.Add(updater);
+            }
+            
+            _toAdd.Clear();
+            
             foreach (var updater in _updaters)
             {
                 updater.Update(deltaTime);
@@ -24,7 +32,7 @@ namespace Updater
 
         public void Add(IUpdater updater)
         {
-            _updaters.Add(updater);
+            _toAdd.Add(updater);
         }
 
         public void Remove(IUpdater updater)

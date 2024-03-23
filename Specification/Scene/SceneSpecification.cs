@@ -5,7 +5,7 @@ using SimpleJson;
 namespace Specification.Scene
 {
     [Serializable]
-    public class SceneSpecification : Specification
+    public class SceneSpecification : BaseSpecification
     {
         public string SceneId;
         public string PrefabId;

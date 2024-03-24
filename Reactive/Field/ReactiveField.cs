@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReactiveField
+namespace Reactive.Field
 {
     public class ReactiveField<T> : IReactiveField<T>
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ReactiveField
+namespace Reactive.Field
 {
-    public interface IReactiveField<T>
+    public interface IReactiveField<out T>
     {
         event Action<T> OnChanged;
         T Value { get; }

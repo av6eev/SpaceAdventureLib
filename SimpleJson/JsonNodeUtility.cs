@@ -20,5 +20,10 @@ namespace SimpleJson
 
             return result;
         }
+        
+        public static IDictionary<string, object> GetNode(this IDictionary<string, object> node, string key)
+        {
+            return (IDictionary<string, object>)node[key];
+        }
     }
 }

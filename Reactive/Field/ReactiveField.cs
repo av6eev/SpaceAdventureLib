@@ -4,7 +4,7 @@ namespace Reactive.Field
 {
     public class ReactiveField<T> : IReactiveField<T>
     {
-        public event Action<T> OnChanged;
+        public event Action<T, T> OnChanged;
 
         private T _value;
         public T Value
@@ -12,11 +12,12 @@ namespace Reactive.Field
             get => _value;
             set
             {
-                if (_value.Equals(value)) return;
-            
-                _value = value;
+                var oldValue = _value;
+
+                if ((oldValue == null || oldValue.Equals(value)) && (value == null || value.Equals(oldValue))) return;
                 
-                OnChanged?.Invoke(_value);
+                _value = value;
+                OnChanged?.Invoke(_value, oldValue);
             }
         }
 

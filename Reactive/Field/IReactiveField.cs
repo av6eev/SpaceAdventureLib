@@ -4,7 +4,7 @@ namespace Reactive.Field
 {
     public interface IReactiveField<out T>
     {
-        event Action<T> OnChanged;
+        event Action<T, T> OnChanged;
         T Value { get; }
     }
 }
